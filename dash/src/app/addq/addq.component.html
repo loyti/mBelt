@@ -1,0 +1,24 @@
+<div>
+  <h2 *ngIf="currentUser">Welcome {{ currentUser.username }}</h2>
+</div>
+<div style="display: inline;">
+  <h4 style="text-align: left"><a [routerLink]="['/dash']">Home</a></h4>
+  <h4 style="text-align: right"><a [routerLink]="['/logout']">Logout</a></h4>
+</div>
+<div>
+  <h2>Create New Question</h2>
+  <form (submit)="addQ(newQ)">
+    <p>Question: <input
+      type="text"
+      name="title"
+      [(ngModel)]="newQ.title"
+      #title="ngModel"
+      ></p>
+    <p>Description: <input
+      type="text"
+      name="description"
+      [(ngModel)] = "newQ.description"
+      #description="ngModel"></p>
+      <input type="submit" name="">
+  </form>
+</div>

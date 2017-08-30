@@ -1,0 +1,19 @@
+<div>
+  <h2 *ngIf="currentUser">Welcome {{ currentUser.username }}</h2>
+</div>
+<div style="display: inline;">
+  <h4 style="text-align: right"><a [routerLink]="['/logout']">Logout</a></h4>
+  <h4 style="text-align: left"><a [routerLink]="['/addq']">Add Question</a></h4>
+</div>
+<div>
+  <h2>All Questions</h2>
+  <div *ngFor="let question of questions">
+    <p>{{ question.title }}</p>
+    <p>{{ question.description }}</p>
+    <div *ngFor="let comment of comments">
+      <p>{{ comment.title }}</p>
+      <p>{{ comment.description }}</p>
+      <p>{{ comment.likes }}</p>
+    </div>
+  </div>
+</div>
